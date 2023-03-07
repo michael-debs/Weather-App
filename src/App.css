@@ -90,7 +90,7 @@ body {
 
 .weather-details {
   margin: auto;
-  width: 75%;
+  width: 350px;
   height: 150px;
   display: flex;
   align-items: center;
