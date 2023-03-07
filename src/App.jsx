@@ -3,6 +3,14 @@ import { faMagnifyingGlass, faLocationDot } from "@fortawesome/free-solid-svg-ic
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 
+
+import Clear from './assets/Clear.svg'
+import Clouds from './assets/Clouds.svg'
+import Drizzle from './assets/Drizzle.svg'
+import Rain from './assets/Rain.svg'
+import Snow from './assets/Snow.svg'
+import Thunderstorm from './assets/thunderstorm.svg'
+
 import './App.css'
 
 import Weather from './components/Weather'
@@ -50,29 +58,28 @@ function App() {
     const city = document.querySelector('.search-box span input').value
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=ef70ad32dc6e70d009c75047a1e94a4a`)
       .then(({ data }) => {
-        console.log(data);
         setWeather(data)
         switch (data.weather[0].main) {
           case 'Clouds':
-            setIcon('Clouds')
+            setIcon(Clouds)
             break;
           case 'Clear':
-            setIcon('Clear')
+            setIcon(Clear)
             break;
           case 'thunderstorm':
-            setIcon('thunderstorm')
+            setIcon(Thunderstorm)
             break;
-          case 'Mist' || 'Smoke' || 'Haze' || 'Dust' || 'Fog' || 'Sand' || 'Ash' || 'Squall' || 'Tornado':
+          case 'Fod':
             setIcon('Fog')
             break;
           case 'Snow':
-            setIcon("Snow")
+            setIcon(Snow)
             break;
           case 'Rain':
-            setIcon('Rain')
+            setIcon(Rain)
             break;
           case 'Drizzle':
-            setIcon('Drizzle')
+            setIcon(Drizzle)
         }
         if (first) {
           setContainerClassName('scale-up')
@@ -86,10 +93,8 @@ function App() {
             setBoxClassName('fade-in')
             setTextClassName('fade-in')
             setImgClassName('fade-in')
-            console.log('s');
           }, 1000)
         }
-        console.log(first);
         first = false
       })
       .catch(err => {

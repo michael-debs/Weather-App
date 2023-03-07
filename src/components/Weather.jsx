@@ -1,15 +1,18 @@
 import { faTemperatureThreeQuarters, faWind } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 import errImg from "../assets/err.svg"
+
 
 
 function Weather(props) {
     const weather = props.weather;
 
+
     return (
         <>
             <div className={`weather ${props.styles.imgClassName}`}>
-                <img src={`public/${props.icon}.svg`} />
+                <img src={props.icon} />
                 <p className={`${props.styles.textClassName}`}>{weather.weather[0].main}</p>
             </div>
             <div className="weather-details">
@@ -31,7 +34,7 @@ function Weather(props) {
             </div>
         </>
     )
-    
+
 }
 
 export default Weather
