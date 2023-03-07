@@ -1,0 +1,12 @@
+:root {
+  --dark-blue: #06283D;
+  --blue: #1363DF;
+  --light-blue: #47B5FF;
+  --xlight-blue: #DFF6FF;
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+}
