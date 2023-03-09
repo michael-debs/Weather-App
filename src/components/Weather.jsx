@@ -1,7 +1,6 @@
 import { faTemperatureThreeQuarters, faWind } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import errImg from "../assets/err.svg"
 
 
 
@@ -20,11 +19,6 @@ function Weather(props) {
                     <FontAwesomeIcon icon={faWind} />
                     <p>{weather.wind.speed} m/s</p>
                     <p>Wind</p>
-                </div>
-                <div className={`${props.styles.boxClassName}`}>
-                    <img height={'50px'} src={errImg} />
-                    <p>2 cm</p>
-                    <p>Err Abdalla</p>
                 </div>
                 <div className={`${props.styles.boxClassName}`}>
                     <FontAwesomeIcon icon={faTemperatureThreeQuarters} />

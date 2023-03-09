@@ -59,6 +59,7 @@ function App() {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=ef70ad32dc6e70d009c75047a1e94a4a`)
       .then(({ data }) => {
         setWeather(data)
+        console.log(data);
         switch (data.weather[0].main) {
           case 'Clouds':
             setIcon(Clouds)
